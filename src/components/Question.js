@@ -27,8 +27,7 @@ class  Question extends Component {
         if (!confirmed) {
           this.setState({transactionState: `
             Transaction confirmed!
-            Funds payed out to account
-            ${addresses[0]}
+            Funds payed out to winner
           `})
         }
         confirmed = true

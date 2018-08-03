@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 
 const QuestionPreview = ({question}) => {
-
   const username = question.User ? question.User.username : 'fake'
   return (
     <Link to={`/question/${question.id}`} className='link'>
@@ -39,7 +38,7 @@ const QuestionPreview = ({question}) => {
           Bounty
         </Bounty>
         <Reward>
-           {Number(Math.round(question.bounty) / 1000000000000000000).toFixed(8).replace(/\.?0+$/,"")} ETH 
+           {Number(question.bounty / 1000000000000000000).toFixed(8).replace(/\.?0+$/,"")} ETH 
         </Reward>
         <Title>
           {question.title}
