@@ -25,7 +25,7 @@ const Navbar = (props) => {
         </h1>
         <h4 className="nav-home">
           <NavLink 
-            to="/home"
+            to="/"
             linkcolor={ linkcolor }
             linkcolorhover={ linkcolorhover }
           >

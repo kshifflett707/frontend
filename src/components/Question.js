@@ -44,13 +44,9 @@ class  Question extends Component {
     const qid = question && question.id
     return (
       <Layout>
-        <Stats>
-          <Stat>Asked</Stat><Value>{question && moment(question.createdAt).from()}</Value>
-          <Stat>Views</Stat><Value>{question && question.viewCount}</Value>
-          <Stat>Active</Stat><Value>{question && moment(question.updatedAt).from()}
-          <div style={{marginTop: "10px", width: "110px"}}><button onClick={() => this.payout(qid)} style={{height: "50px", width: "140px"}}>{ this.state.transactionState }</button></div>
-          </Value>
-        </Stats>
+        <Payout onClick={() => this.payout(qid)}>
+          { this.state.transactionState }
+        </Payout>
         <Username>{ question.User && question.User.username }</Username>
         <Actions>
           <Upvote onClick={() => this.props.updateQuestionVote({id: question.id, UserId: this.props.auth.user.id})}>▲</Upvote>
@@ -74,21 +70,6 @@ const Layout = styled.div`
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 10% 80% 10%;
-`
-const Stats = styled.div`
-  grid-row: 1;
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: 100px 200px;
-  justify-self: center;
-`
-const Stat = styled.p`
-  color: grey;
-  grid-column: 1;
-`
-const Value = styled.p`
-  color: black;
-  grid-column: 2;
 `
 const Title = styled.h2`
   grid-row: 2;
@@ -143,4 +124,18 @@ const Body = styled.p`
   font-size: 20px;
   min-height: 200px;
   white-space: pre-wrap;
+  overflow: auto;
+`
+const Payout = styled.button`
+  grid-column: 2;
+  width: 180px;
+  height: 70px;
+  justify-self: center;
+  margin-top: 2em;
+  font-size: 15px;
+  &:hover{{
+    font-weight: bold;
+    background: ${styles.MAIN_COLOR};
+    color: ghostwhite;
+  }}
 `

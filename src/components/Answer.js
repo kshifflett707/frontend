@@ -78,4 +78,5 @@ const Body = styled.p`
   min-height: 250px;
   white-space: pre-wrap;
   padding: 25px;
+  background: white;
 `

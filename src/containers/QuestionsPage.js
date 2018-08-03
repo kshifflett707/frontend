@@ -90,8 +90,6 @@ export default class QuestionsPage extends Component {
             Ask a Question
           </Button>
         </Heading>
-        <Preview>
-        </Preview>
         <AskQuestion
           {...this.props}
           title={this.props.textInput.title}
@@ -137,7 +135,7 @@ const Layout = styled.div`
     box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.9);
     margin-right: 1em;
     margin-left: 1em;
-    grid-column: 2 / 5;
+    grid-column: 1 / 5;
     &:hover {
       border: 2px solid ${styles.GREEN};
     }
@@ -174,24 +172,13 @@ const Heading = styled.div`
   grid-template-rows: 117px auto;
   grid-row: 2;
   grid-column-gap: 10px;
-  grid-column: 2 / 5;
+  grid-column: 1 / 5;
   align-items: center;
   background-color: ${styles.NAVY};
   border-bottom: 1.2px solid ${styles.MAIN_FONT};
   border-top: 1.2px solid ${styles.MAIN_FONT};
   font-family: Arial Narrow, sans-serif;
   font-weight: bold;
-`
-const Preview = styled.div`
-  grid-row: 2 / span 9;
-  grid-column: 1;
-  display: grid;
-  grid-template-rows: auto;
-  font-size: 26px;
-  color: ${styles.MAIN_FONT};
-  background-color: ${styles.NAVY};
-  text-align: center;
-  border: 1.2px solid ${styles.MAIN_FONT};
 `
 const Tag2 = styled.div`
   grid-column: 1;

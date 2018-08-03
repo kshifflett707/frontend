@@ -55,6 +55,7 @@ const Layout = styled.div`
   grid-column-gap: 30px;
   grid-row-gap: 15px;
   min-width: 800px;
+  background: ${styles.SECONDARY_COLOR};
 
   > .nav {
     grid-column: 1 / -1;
@@ -68,7 +69,7 @@ const AnswerDiv = styled.div`
   margin-bottom: 2em;
   font-weight: bold;
   font-size: 28px;
-  color: ${styles.BORDER_MODAL};
+  color: ${styles.MAIN_COLOR};
 `
 const YourAnswerDiv = styled.div`
   grid-column: 1 / 5;
@@ -77,5 +78,5 @@ const YourAnswerDiv = styled.div`
   margin: 2em;
   font-weight: bold;
   font-size: 28px;
-  color: ${styles.BORDER_MODAL};
+  color: ${styles.MAIN_COLOR};
 `

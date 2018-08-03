@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import * as styles from "../components/StyledComponents"
 
 const GiveAnswer = props => {
   return (
@@ -8,7 +9,7 @@ const GiveAnswer = props => {
         value={props.textInput.answerBody}
         onChange={e => props.addText("answerBody", e.target.value, e)}
       />
-      <button
+      <Button
         onClick={() =>
           props.auth.isAuthenticated
             ? props.postAnswer({
@@ -21,7 +22,7 @@ const GiveAnswer = props => {
         }
       >
         Submit
-      </button>
+      </Button>
     </Div>
   )
 }
@@ -34,4 +35,17 @@ const Div = styled.div`
   grid-template-rows: 10em auto;
   grid-template-columns: auto;
   margin-bottom: 5em;
+`
+const Button = styled.button`
+  grid-row: 2;
+  width: 100px;
+  height: 30px;
+  justify-self: center;
+  margin-top: 2em;
+  font-size: 15px;
+  &:hover{{
+    font-weight: bold;
+    background: ${styles.MAIN_COLOR};
+    color: ghostwhite;
+  }}
 `

@@ -39,7 +39,7 @@ const QuestionPreview = ({question}) => {
           Bounty
         </Bounty>
         <Reward>
-          {(Math.round(question.bounty) / 1000000000000000000)} ETH
+           {Number(Math.round(question.bounty) / 1000000000000000000).toFixed(8).replace(/\.?0+$/,"")} ETH 
         </Reward>
         <Title>
           {question.title}
@@ -61,6 +61,7 @@ const Question = styled.div`
   background-color: aliceblue;
   border-radius: 8px; 
   padding: 5px;
+  overflow: auto;
   &:hover {
       background-color: rgb(228, 245, 255);
   }
